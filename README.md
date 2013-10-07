@@ -1,6 +1,7 @@
 # Docker Selenium Grid
 
-CLI program for building and managing a Selenium Grid with Docker containers.
+CLI program for building and managing a Selenium Grid with Docker containers. Each browser node runs a single instance of the browser. I find this 
+helps when running Selenium tests in parallel.
 
 ## Requirements
 
@@ -8,6 +9,8 @@ CLI program for building and managing a Selenium Grid with Docker containers.
 * Python 2.7
 
 ## Installation
+
+This installation will build the following Docker containers: Selenium Hub, PhantomJS, and Firefox.
 
 ```bash
 git clone https://github.com/brady-vitrano/dsgrid.git
@@ -17,6 +20,8 @@ dsgrid install
 ```
 
 ## Usage
+
+Once installed you can manage the Grid with 
 
 ```
 # Start the Hub
@@ -36,6 +41,9 @@ dsgrid shutdown
 
 View the Grid console on: http://localhost:49044/grid/console
 
+## Hacking
+
+Feel free to hack the Dockerfiles and scripts under `files/`. Pull requests are welcomed.
 
 ## Author Note
 
