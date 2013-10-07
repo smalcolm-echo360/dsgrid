@@ -114,7 +114,7 @@ class GridHub:
         return "Up" in container['Status']
 
     def start(self):
-        response = self.adapter.client.create_container('dsgrid/selenium-grid', [], ports=["49044:4444"])
+        response = self.adapter.client.create_container('dsgrid/selenium-hub', [], ports=["49044:4444"])
         if response['Id']:
             self.adapter.client.start(response)
 
