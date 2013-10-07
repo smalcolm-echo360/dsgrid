@@ -1,7 +1,7 @@
 # Docker Selenium Grid
 
 CLI program for building and managing a Selenium Grid with Docker containers. Each browser node runs a single instance of the browser. I find this 
-helps when running Selenium tests in parallel.
+helpful when running Selenium tests in parallel.
 
 ## Requirements
 
@@ -22,12 +22,12 @@ dsgrid install
 
 ## Usage
 
-Once installed you can manage the Grid with 
+Once installed you can start and manage a Selenium Grid. Example:
 
 ```
 # Start the Hub
 dsgrid start
-# Add Nodes
+# Add Nodes 
 dsgrid nodes add firefox
 dsgrid nodes add phantomjs
 # Restart Nodes by Browser
