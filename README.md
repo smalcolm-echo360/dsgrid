@@ -14,9 +14,7 @@ helpful when running Selenium tests in parallel.
 This installation will build the following Docker containers: Selenium Hub, PhantomJS, and Firefox.
 
 ```bash
-git clone https://github.com/brady-vitrano/dsgrid.git
-cd dsgrid
-python setup.py install
+pip install dsgrid
 dsgrid install
 ```
 
