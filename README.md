@@ -7,6 +7,7 @@ helps when running Selenium tests in parallel.
 
 * Docker
 * Python 2.7
+* pip
 
 ## Installation
 
