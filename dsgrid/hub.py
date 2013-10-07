@@ -88,7 +88,7 @@ class GridHub:
         self.adapter = DockerAdapter()
 
     def get_container_info(self):
-        container = self.adapter.find_container('dsgrid/selenium-grid:latest')
+        container = self.adapter.find_container('dsgrid/selenium-hub:latest')
         if not container:
             # raise exception container not found
             return False
@@ -168,7 +168,7 @@ class GridHub:
     def shutdown(self):
 
         self.stop_nodes()
-        container = self.adapter.find_container('dsgrid/selenium-grid:latest')
+        container = self.adapter.find_container('dsgrid/selenium-hub:latest')
         if not container:
             # raise exception container not found
             return False
