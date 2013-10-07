@@ -6,8 +6,8 @@ helpful when running Selenium tests in parallel.
 ## Requirements
 
 * Docker
-* Python 2.7
-* setuptools
+* Python
+* pip
 
 ## Installation
 
