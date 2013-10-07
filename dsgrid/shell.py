@@ -112,7 +112,7 @@ def install(option, argv):
     builder.build('firefox')
     ok("Firefox container installed")
     info("Installing PhantomJS...")
-    builder.build('firefox')
+    builder.build('phantomjs')
     ok("PhantomJS container installed")
     ok("Selenium Grid is installed!")
 
