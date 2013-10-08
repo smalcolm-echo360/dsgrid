@@ -2,12 +2,9 @@ import setuptools
 import os
 
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
-
 setuptools.setup(
     name="dsgrid",
-    version='0.1.0',
+    version='0.1.1',
     description="Build and Manage a Selenium Grid using Docker.",
     packages=['dsgrid'],
     author="Brady Vitrano",
@@ -24,5 +21,5 @@ setuptools.setup(
         'docker-py',
         'mock'
     ],
-    long_description=read('README.md')
+    long_description="Selenium Grid in Docker"
 )
