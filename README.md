@@ -51,12 +51,10 @@ installed on Docker hosts.
 
 The tests are incomplete. What you see are my TDD leftovers.
 
-## Missing/TODO
+## Having Problems? Need Help?
 
-* Fix tests
-* Add logging and debugging options
-* Add ChromeDriver
-* Add CLI usage help with tabcomplete
-* Add documentation on configuring Dockerfiles for custom Selenium settings ie proxy, timeouts, etc
+**IRC Channel:** irc.freenode.net #dsgrid
+
+**Author Email:** brady[at]vitrano.me or get my Gmail from the setup.py
 
 
