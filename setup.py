@@ -1,12 +1,15 @@
 import setuptools
 import os
+import sys
 
+ROOT_DIR = os.path.dirname(__file__)
+SOURCE_DIR = os.path.join(ROOT_DIR)
 
 setuptools.setup(
     name="dsgrid",
-    version='0.1.1',
+    version='0.1.2',
     description="Build and Manage a Selenium Grid using Docker.",
-    packages=['dsgrid'],
+    packages=['dsgrid','dsgrid.tests'],
     author="Brady Vitrano",
     author_email="bjvitrano@gmail.com",
     license="Apache",
@@ -21,5 +24,10 @@ setuptools.setup(
         'docker-py',
         'mock'
     ],
+    data_files=[
+       ("dsgrid/files/firefox", [os.path.join(SOURCE_DIR, "dsgrid/files/firefox/Dockerfile"), os.path.join(SOURCE_DIR, "dsgrid/files/firefox/register-node.sh")]),
+       ("dsgrid/files/phantomjs", [os.path.join(SOURCE_DIR,"dsgrid/files/phantomjs/Dockerfile"),os.path.join(SOURCE_DIR,"dsgrid/files/phantomjs/register-node.sh")]),
+       ("dsgrid/files/selenium", [os.path.join(SOURCE_DIR,"dsgrid/files/selenium/Dockerfile")])
+   ],
     long_description="Selenium Grid in Docker"
 )

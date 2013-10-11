@@ -15,21 +15,25 @@ class GridBuilder:
 
     def build(self, container):
         if container == 'phantomjs':
-            if not os.path.exists('files/phantomjs'):
-                return False
-            self.adapter.client.build('files/phantomjs', 'dsgrid/phantomjs-node')
+            directory = os.path.join('/usr/local/dsgrid','files','phantomjs')
+            if not os.path.exists(directory):
+                print "File not found"
+ 		return False
+            self.adapter.client.build(directory, 'dsgrid/phantomjs-node')
             return True
 
         if container == 'firefox':
-            if not os.path.exists('files/firefox'):
+            directory = os.path.join('/usr/local/dsgrid','files','firefox')
+            if not os.path.exists(directory):
                 return False
-            self.adapter.client.build('files/firefox', 'dsgrid/firefox-node')
+            self.adapter.client.build(directory, 'dsgrid/firefox-node')
             return True
 
         if container == 'selenium-hub':
-            if not os.path.exists('files/selenium'):
+            directory = os.path.join('/usr/local/dsgrid','files','selenium')
+            if not os.path.exists(directory):
                 return False
-            self.adapter.client.build('files/selenium', 'dsgrid/selenium-hub')
+            self.adapter.client.build(directory, 'dsgrid/selenium-hub')
             return True
 
         return False
