@@ -3,6 +3,8 @@
 CLI program for building and managing a Selenium Grid with Docker containers. Each browser node runs a single instance of the browser. I find this 
 helpful when running Selenium tests in parallel.
 
+[View the Demo](http://asciinema.org/a/5879) Installation and Usage on Ubuntu Raring with Vagrant
+
 ## Requirements
 
 * Docker
