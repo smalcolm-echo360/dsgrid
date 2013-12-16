@@ -114,9 +114,9 @@ class GridHub:
         return "Up" in container['Status']
 
     def start(self):
-        response = self.adapter.client.create_container('dsgrid/selenium-hub', [], ports=["49044:4444"])
+        response = self.adapter.client.create_container('dsgrid/selenium-hub', ports={"4444/tcp": {}})
         if response['Id']:
-            self.adapter.client.start(response)
+            self.adapter.client.start(response, None, {'4444/tcp': ('', '49044')})
 
     def get_ip(self):
         container = self.get_container_info()
