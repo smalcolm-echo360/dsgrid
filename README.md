@@ -13,7 +13,8 @@ helpful when running Selenium tests in parallel.
 
 ## Installation
 
-This installation will build the following Docker containers: Selenium Hub, PhantomJS, and Firefox.
+This installation will build the following Docker containers: Selenium Hub, PhantomJS, Chrome, and Firefox. Note: If you
+want to customize the Dockerfiles, do so in `/usr/local/dsgrid/files` before running the install.
 
 ```bash
 pip install dsgrid
@@ -53,9 +54,11 @@ installed on Docker hosts.
 
 The tests are incomplete. What you see are my TDD leftovers.
 
-## Having Problems? Need Help?
+## Special Thanks
 
-**IRC Channel:** irc.freenode.net #dsgrid
+* Yas Jaffoo - Adding Chrome Commands
+
+## Having Problems? Need Help?
 
 **Author Email:** brady[at]vitrano.me or get my Gmail from the setup.py
 

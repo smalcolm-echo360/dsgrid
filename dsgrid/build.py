@@ -1,7 +1,5 @@
 from adapter import DockerAdapter
 import os
-from subprocess import call
-
 
 
 class GridBuilder:
@@ -14,23 +12,31 @@ class GridBuilder:
         return container
 
     def build(self, container):
-        if container == 'phantomjs':
-            directory = os.path.join('/usr/local/dsgrid','files','phantomjs')
+        if container == 'chrome':
+            directory = os.path.join('/usr/local/dsgrid', 'files', 'chrome')
             if not os.path.exists(directory):
                 print "File not found"
- 		return False
+                return False
+            self.adapter.client.build(directory, 'dsgrid/chrome-node')
+            return True
+
+        if container == 'phantomjs':
+            directory = os.path.join('/usr/local/dsgrid', 'files', 'phantomjs')
+            if not os.path.exists(directory):
+                print "File not found"
+                return False
             self.adapter.client.build(directory, 'dsgrid/phantomjs-node')
             return True
 
         if container == 'firefox':
-            directory = os.path.join('/usr/local/dsgrid','files','firefox')
+            directory = os.path.join('/usr/local/dsgrid', 'files', 'firefox')
             if not os.path.exists(directory):
                 return False
             self.adapter.client.build(directory, 'dsgrid/firefox-node')
             return True
 
         if container == 'selenium-hub':
-            directory = os.path.join('/usr/local/dsgrid','files','selenium')
+            directory = os.path.join('/usr/local/dsgrid', 'files', 'selenium')
             if not os.path.exists(directory):
                 return False
             self.adapter.client.build(directory, 'dsgrid/selenium-hub')

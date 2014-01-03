@@ -49,6 +49,7 @@ class HubController:
 
         ff_count = 0
         ph_count = 0
+        ch_count = 0
 
         nodes = hub.get_nodes()
         for node in nodes:
@@ -56,11 +57,14 @@ class HubController:
                 ff_count += 1
             elif "phantomjs" in node['Image']:
                 ph_count +=1
+            elif "chrome" in node['Image']:
+                ch_count += 1
 
         status = {
             "Ip": hub.get_ip(),
             "firefox_count": ff_count,
-            "phantomjs_count": ph_count
+            "phantomjs_count": ph_count,
+            "chrome_count": ch_count
         }
 
         return status
@@ -82,7 +86,7 @@ class HubController:
 
 
 class GridHub:
-    VALID_BROWSERS = ('firefox', 'phantomjs')
+    VALID_BROWSERS = ('firefox', 'phantomjs', 'chrome')
 
     def __init__(self):
         self.adapter = DockerAdapter()

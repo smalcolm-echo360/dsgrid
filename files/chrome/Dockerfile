@@ -23,3 +23,5 @@ RUN mkdir /.pki && chown chrome:chrome /.pki && mkdir /.local && chown chrome:ch
 #USER chrome
 WORKDIR /home/chrome
 ADD run.sh /home/chrome/run.sh
+RUN chmod 755 /home/chrome/run.sh
+CMD ["/bin/bash", "/home/chrome/run.sh"]
