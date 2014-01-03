@@ -17,6 +17,7 @@ This installation will build the following Docker containers: Selenium Hub, Phan
 want to customize the Dockerfiles, do so in `/usr/local/dsgrid/files` before running the install.
 
 ```bash
+# Note: you may have to use "sudo" if your linux user does not have proper permissions
 pip install dsgrid
 dsgrid install
 ```
@@ -26,6 +27,7 @@ dsgrid install
 Once installed you can start and manage a Selenium Grid. Example:
 
 ```
+# Note: you may have to use "sudo" if your linux user does not have proper permissions
 # Start the Hub
 dsgrid start
 # Add Nodes 
