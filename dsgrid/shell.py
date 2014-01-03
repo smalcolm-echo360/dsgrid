@@ -29,11 +29,11 @@ def nodes(subject, argv):
     action = argv.pop(0)
     if action == 'add':
         if len(argv) == 0:
-            fail("Missing browser, use phantomjs|firefox")
+            fail("Missing browser, use phantomjs|firefox|chrome")
 
         browser = argv.pop(0)
         if not HubController.is_valid_browser(browser):
-            fail("Invalid browser please use phantomjs|firefox")
+            fail("Invalid browser please use phantomjs|firefox|chrome")
 
         info("Adding node...")
         status = HubController.add(browser)
@@ -50,11 +50,12 @@ def nodes(subject, argv):
         info("Restarting nodes...")
         browser = None
         if len(argv) == 1 and not HubController.is_valid_browser(argv.pop(0)):
-            fail('Restarting by browser requires either phantomjs or firefox')
+            fail('Restarting by browser requires either phantomjs, chrome or firefox')
 
         HubController.restart_nodes(browser)
         ok("Nodes restarted")
     elif action == 'rebuild':
+        # TODO:
         print "Rebuild Nodes optional by browser"
     else:
         fail("Unknown node action: " + action)
@@ -62,7 +63,6 @@ def nodes(subject, argv):
 
 def rebuild(subject, argv):
     fail("TODO: Rebuild the Hub and Browsers")
-
 
 
 def start(subject, argv):
@@ -91,7 +91,10 @@ def grid_status(subject, argv):
         ok("Grid is not running")
         sys.exit(1)
     grid = HubController.get_status()
-    ok("GridIP: " + grid['Ip'] + ' Firefox Nodes: ' + str(grid['firefox_count']) + ' PhantomJS Nodes: ' + str(grid['phantomjs_count']))
+    ok("GridIP: " + grid['Ip']
+       + ' Firefox Nodes: ' + str(grid['firefox_count'])
+       + ' PhantomJS Nodes: ' + str(grid['phantomjs_count'])
+       + ' Chrome Nodes: ' + str(grid['chrome_count']))
 
 
 def unknown(option, argv):
@@ -114,6 +117,9 @@ def install(option, argv):
     info("Installing PhantomJS...")
     builder.build('phantomjs')
     ok("PhantomJS container installed")
+    info("Installing Chrome...")
+    builder.build('chrome')
+    ok("Chrome container installed")
     ok("Selenium Grid is installed!")
 
 
