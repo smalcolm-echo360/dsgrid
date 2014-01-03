@@ -56,7 +56,7 @@ The tests are incomplete. What you see are my TDD leftovers.
 
 ## Special Thanks
 
-* Yas Jaffoo - Adding Chrome Commands
+* Yassine Jaffoo (Yas)
 
 ## Having Problems? Need Help?
 
