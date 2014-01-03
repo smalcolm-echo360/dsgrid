@@ -26,7 +26,7 @@ dsgrid install
 
 Once installed you can start and manage a Selenium Grid. Example:
 
-```
+```bash
 # Note: you may have to use "sudo" if your linux user does not have proper permissions
 # Start the Hub
 dsgrid start
