@@ -3,7 +3,7 @@ import docker
 
 class DockerAdapter:
     def __init__(self):
-        self.client = docker.Client(base_url='unix://var/run/docker.sock', version="1.4")
+        self.client = docker.Client(base_url='unix://var/run/docker.sock', version="1.6")
 
     def find_image(self, repo_name):
         images = self.client.images()
