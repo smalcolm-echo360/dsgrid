@@ -7,7 +7,7 @@ SOURCE_DIR = os.path.join(ROOT_DIR)
 
 setuptools.setup(
     name="dsgrid",
-    version='0.1.3',
+    version='0.1.4',
     description="Build and Manage a Selenium Grid using Docker.",
     packages=['dsgrid', 'dsgrid.tests'],
     author="Brady Vitrano",
