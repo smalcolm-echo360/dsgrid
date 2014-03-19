@@ -45,6 +45,22 @@ dsgrid shutdown
 
 View the Grid console on: http://localhost:49044/grid/console
 
+## Installing and Using within Docker
+
+You don't even need to use pip. The grid manager can be run from inside docker on minimal systems.
+
+```
+docker run -v /var/run/docker.sock:/var/run/docker.sock calebtomlinson/dsgrid dsgrid install
+```
+
+Use any of dsgrid commands from inside the container.
+
+```
+docker run -v /var/run/docker.sock:/var/run/docker.sock calebtomlinson/dsgrid dsgrid start
+docker run -v /var/run/docker.sock:/var/run/docker.sock calebtomlinson/dsgrid dsgrid nodes add firefox
+docker run -v /var/run/docker.sock:/var/run/docker.sock calebtomlinson/dsgrid dsgrid shutdown
+```
+
 ## Hacking
 
 Feel free to hack the Dockerfiles and scripts under `files/`. Pull requests are welcomed.
