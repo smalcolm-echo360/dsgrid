@@ -7,7 +7,7 @@ RUN apt-get update
 RUN echo debconf shared/accepted-oracle-license-v1-1 select true | debconf-set-selections
 RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-selections
 RUN apt-get install oracle-java7-installer -y
-RUN wget https://selenium.googlecode.com/files/selenium-server-standalone-2.39.0.jar
+RUN wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
 RUN apt-get install firefox xvfb dbus-x11 -y
 ADD register-node.sh /var/register-node.sh
 RUN chmod 755 /var/register-node.sh
