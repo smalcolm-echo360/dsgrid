@@ -5,6 +5,10 @@ helpful when running Selenium tests in parallel.
 
 [View the Demo](http://asciinema.org/a/5879) Installation and Usage on Ubuntu Raring with Vagrant
 
+## Compatibility
+* Selenium `2.44`
+* Docker `Client version: 1.0.1, Client API version: 1.12`
+
 ## Requirements
 
 * Docker
